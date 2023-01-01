@@ -1,0 +1,1431 @@
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size:13px;
+    /*O Overflow-x serve para aplicar a propriedade na barra de rolagem horizontal, e o hidden é para não mostrar o conteúdo. Ou seja, todo o conteúdo que passar da minha tela na horizontal será ignorado.*/
+    overflow-x:hidden;
+}
+
+header{
+    height: 100px;
+    background-color:#000;
+    color:white;
+}
+
+.header{
+    max-width:1140px;
+    height: 100px;
+    margin:auto;
+    display:flex;
+    align-items: center;
+}
+
+.logo{
+    width:100px;
+}
+
+.logoimg{
+    width: 80px;
+    height:80px;
+    background-color:#b28756 ;
+    border-radius: 40px;
+}
+
+/* Foi usado o display flex e o justify-content flex end para alinhar apenas o conteudo de dentro dessa classe ao lado direito dela */
+
+.menu-opener{
+    display: none;
+}
+
+.menu{
+    flex:1;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.menu ul,
+.menu li{
+    list-style: none;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu li a{
+   color:#fff;
+   text-transform: uppercase;
+   font-weight:600; 
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   padding-left:10px;
+   padding-right:10px;
+   height: 100px;
+   /*Foi usado a borda para nao ter o efeito do texto subir com o hover, entao, colocando a borda, ele nao vai ter o efeito de subir o texto, porque ele apenas vai substituir a borda*/
+   border-bottom:5px solid #000;
+}
+
+.menu li a:hover{
+    border-bottom:5px solid #b28756;
+    color: #ccc;
+}
+
+.menu .active a{
+    border-bottom:5px solid #b28756;
+}
+
+.button{
+    display: inline-block;
+    background-color: #b28756;
+    color:#fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-top:30px;
+    border-radius: 20px;
+}
+
+/* o valor 100vh foi usado para pegar o monitor inteiro, ou seja, o tamanho dele vai ser de acordo com o tamanho do monitor */
+.banner{
+    height: calc(100vh - 100px);
+    background-color: #333;
+    background-image:url("../images/imagem.jpg");
+    background-size:cover;
+    /* o background-position e usado para priorizar uma parte da imagem, ou seja, no caso do center, ele vai priorizar mostrar o centro da imagem */
+    background-position: center;
+    /* overflow hidden serve para que tudo o que passar da minha tela, ela vai ignorar */
+    overflow:hidden;
+}
+
+.banner .sliders{
+    width: 1000vw;
+    height: 100%;
+}
+
+.banner .slide{
+    width: 100vw;
+    height:100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.banner .slidearea{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+
+}
+
+.banner h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.banner h1 span{
+    color: #b28756;
+}
+
+.banner h2{
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+
+.banner .sliders-pointers{
+    width: 100vw;
+    height: 20px;
+    position: absolute;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.banner .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    border-radius: 8px;
+    margin-left:5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.banner .pointer.active{
+    background-color: #b28756;
+}
+
+.default{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.default .section-title,
+.default .section-desc{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.default .section-title{
+    font-size: 20px;
+}
+
+.default .section-desc{
+    font-size: 12px;
+    color: #ccc;
+    margin-top:10px;
+    margin-bottom:40px;
+}
+
+.default .section-body{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.default.light{
+    background-color: #f7f7f7;
+}
+
+.default.light .section-title,
+.default.light .section-body{
+    color: #000;
+}
+
+.default.dark{
+    background-color: #000;
+}
+
+.default.dark .section-title,
+.default.dark .section-body{
+    color: #fff;
+}
+
+
+
+
+/*CSS DE ÁRES ESPECÍFICAS*/
+.section-aboutus{
+    display: flex;
+}
+
+.section-aboutus--left{
+    flex: 1;
+}
+
+.section-aboutus--left p{
+    font-size:14px;
+    line-height: 25px;   
+}
+
+.section-aboutus--right{
+    width:520px;
+    text-align: center;
+}
+
+.section-aboutus--right img{
+    width: 480px;
+    box-shadow: 0px 5px 10px #333;
+}
+
+
+
+.section-services{
+    display: flex;
+}
+
+.section-service{
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #333;
+    padding: 15px;
+}
+
+.section-service:nth-child(1){
+    border-left: 1px solid #333;
+}
+
+.section-service h4{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.section-service p{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
+}
+
+.section-service img{
+    width: 80px;
+}
+
+.section-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-projects--filters{
+    border: 1px solid #999;
+    background-color: #eee;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+
+.section-projects--filters ul,
+.section-projects--filters li{
+    list-style: none;
+}
+
+.section-projects--filters li{
+    display: inline-block;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-left: 1px solid #ccc;
+    color: #555;
+    border-bottom: 3px solid #eee;
+    cursor: pointer;
+}
+
+.section-projects--filters li:hover,
+.section-projects--filters li.active{
+    border-bottom: 3px solid #b28756;
+}
+
+.section-projects--filters li:first-child{
+    border-left:0;
+}
+
+
+/*Foi declarado dois tipos de largura, porque ele tem que ter um limite, que são os 1140px, porém, se o monitor for menor, ele tem que usar todo o espaço da tela.*/
+.section-projects--photos{
+    width: 100vw;
+    max-width: 1140px;
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.section-projects--photo{
+    width: 280px;
+}
+
+.section-projects--photoarea{
+    margin: 10px;
+    width: 260px;
+    height: 160px;
+}
+
+.section-projects--photoarea img{
+    width: inherit;
+    height: inherit;
+}
+
+.section-projects--photoinfo{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: inherit;
+    height: inherit;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.section-projects--photoinfo h5{
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.section-projects--photoinfo p{
+    text-transform: uppercase;
+}
+
+/*Aqui foi declarado desta forma, porque quando passarmos o mouse em cima da photoarea, ele vai aplicar as propriedades no photoinfo, então, caso queira aplicar as propriedades em uma determinada área, o hover deve ser colocado no elemento pai*/
+.section-projects--photoarea:hover .section-projects--photoinfo{
+    display: flex;
+}
+
+
+.bg-team{
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+}
+
+.section-team-area{
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-team {
+    overflow: hidden;
+    max-width: 880px;
+    margin:auto;
+}
+
+.section-team .sliders{
+    width: 1000vw;
+    height: 100%;
+}
+
+.section-team .slide{
+    width: 280px;
+    height:100%;
+    min-height: 300px;
+    display: inline-block;
+    background-color: #fff;
+    margin-right: 20px;
+}
+
+.section-team .slidearea{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    align-items: center;
+    color: #000;
+    justify-content: center;
+    padding: 30px;
+}
+
+
+.section-team-area .sliders-pointers{
+    margin-top: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.section-team-area .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    border-radius: 8px;
+    margin-left:5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.section-team-area .pointer.active{
+    background-color: #b28756;
+}
+
+
+
+.section-team--avatar{
+    width: 150px;
+    height: auto;
+}
+
+.section-team--name{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    margin-top: 30px;
+}
+
+.section-team--role{
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.section-team--social{
+    display: flex;
+    margin-top: 20px;
+}
+
+.section-team--social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 13px;
+    margin-right: 10px;
+}
+
+.section-team--social a:hover,
+.section-team--social a:first-child{
+    background-color: #b28756;
+}
+
+.section-happy-clients{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.default.light.fundo{
+    background-color: #eee;
+}
+
+.section-area--client{
+    text-align: center;
+}
+
+.section-client--name{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+.section-client--role{
+    font-size: 17px;
+    font-weight: 400;
+    color: #222;
+    margin-top: 5px;
+}
+
+.section-area--description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-area--asp{
+    margin-top: 25px;
+}
+
+.section-area--text{
+    margin-top:10px;
+    text-align: center;
+    max-width: 880px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #bbb;
+}
+
+
+.section-happy-clients .sliders-pointers{
+    margin-top: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.section-happy-clients .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    border-radius: 8px;
+    margin-left:5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.section-happy-clients .pointer.active{
+    background-color: #b28756;
+}
+
+
+.section-area--sponsors{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.default.light.arred{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.section-area--prices{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.section-area--table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-area--type{
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.section-area--price{
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.section-area--timecourse{
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.section-area--information{
+    margin-bottom: 3px;
+    color: #aaa;
+}
+
+.button.choose{
+    background-color: #555;
+    text-transform: uppercase;
+    padding: 12px 40px;
+    
+}
+
+.button.choose:hover,
+.button.choose.active{
+    background-color: #b28756;
+}
+
+
+.default.light.border{
+    border-top: 1px solid #ddd;
+}
+
+.section-premium{
+    display: flex;
+    max-width: 997px;
+}
+
+.section-premium--left{
+    flex:1;
+}
+
+.section-premium--left img{
+    height: 340px;
+}
+
+.section-area--word{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-premium--right{
+    display: flex;
+    width: 490px;
+}
+
+.section-area--icon{
+    margin-top: 18px;
+}
+
+.section-premium--description-title{
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 18px;
+}
+
+.section-premium--description{
+    margin-top: 5px;
+    margin-left: 30px;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+
+.section-premium--description:last-child{
+    margin-bottom: 0;
+}
+
+.section-premium--description-topics{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: 400;
+}
+
+
+
+
+.default.light.top{
+    padding-top: 0;
+    margin-top: -15px;
+}
+
+
+.section-basic{
+    max-width: 1140px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-basic .sliders-pointers{
+    margin-top: 40px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.section-basic .pointer{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #b28756;
+    border-radius: 8px;
+    margin-left:5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.section-basic .pointer.active{
+    background-color: #b28756;
+}
+
+
+
+.section-number{
+    font-size: 40px;
+    font-weight: bold;
+    color: #b28756;
+}
+
+.section-tracer{
+    margin: auto;
+    margin-bottom: 5px;
+    height: 4px;
+    width: 20px;
+    background-color: #555;
+}
+
+.section-number-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-somes{
+    display: flex;
+}
+
+.section-some{
+    flex: 1;
+    text-align: center;
+    /* border-right: 1px solid #333; */
+    padding: 15px;
+}
+
+.section-some:nth-child(1){
+    /* border-left: 1px solid #333; */
+}
+
+.section-some h4{
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 17px;
+    width: 170px;
+    margin: auto;
+    height: 40px;
+}
+
+.section-some .text{
+    font-size: 18px;
+}
+
+.section-some p{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
+}
+
+.section-some img{
+    width: 80px;
+}
+
+
+.section-socials{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+}
+.section-socials--left{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.section-sharing-desc{
+    text-transform: uppercase;
+    margin-left: 10px;
+    color: #ccc;
+}
+
+.section-socials--right{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-social-network{
+    margin-left: 40px;
+}
+
+.section-social-network img{
+    width: 30px;
+}
+
+.section-social-network-number{
+    margin-left: 10px;
+}
+
+.default.light.bottom{
+    border-bottom: 1px solid #ddd;
+}
+
+.section-contact{
+    display: flex;
+    max-width: 580px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.section-line-up{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.section-area-name input{
+    width: 260px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    margin-right: 40px;
+    background-color: #eee;
+}
+
+
+
+.section-area-name input::placeholder{
+    margin: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.section-area-email input{
+    width: 260px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    background-color: #eee;
+}
+
+.section-area-email input::placeholder{
+    margin: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+
+.section-line-second{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-area-subject input{
+    width: 560px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    background-color: #eee;
+}
+
+.section-area-subject input::placeholder{
+    margin: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.section-line-third{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-area-message input{
+    width: 560px;
+    height: 100px;
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    border-bottom: 2px solid #ddd;
+    margin-top: 10px;
+    padding-top: 70px;
+    background-color: #eee;
+}
+
+.section-area-message input::placeholder{
+    font-size: 13px;
+    font-weight: 400;
+    color: #ccc;
+}
+
+.section-map{
+    background-image: url("../images/mapa.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.section-map--area{
+    width: 100vw;
+    max-width: 1140px;
+    margin: auto;
+}
+
+.section-map--info{
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+    color: #000;
+}
+
+.section-map--info-item{
+    display: flex;
+    align-items: center;
+    color: #999;
+    margin-top: 15px;
+}
+
+.section-map--info-img{
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #999;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.section-map--info-img img{
+    width: 15px;
+    height: auto;
+}
+
+
+.section-rodape{
+    display: flex;
+}
+
+.section-rodape--area-left{
+    margin-right: 40px;
+}
+
+.section-rodape--area-center{
+    flex: 1;
+}
+
+.section-rodape--area-right{
+    flex: 1;
+}
+
+
+.section-rodape--socials{
+    display: flex;
+    align-items: center;
+}
+
+.section-rodape--socials img{
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+}
+
+
+.section-rodape--socials img:hover,
+.section-rodape--socials img:nth-child(2){
+    background-color: #b28756;
+    border-radius: 8px;
+}
+
+
+.section-rodape--info{
+    font-size: 14px;
+    font-weight: 400;
+    color: #999;
+}
+
+.section-rodape--area-form{
+    width: 350px;
+    height: 200px;
+    background-color: #999;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-rodape--input input{
+    border: none;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    background-color: #999;
+    border-bottom: 2px solid #aaa;
+    width: 220px;
+    padding-bottom: 8px;
+}
+
+.section-rodape--input input::placeholder{
+    text-align: center;
+}
+
+
+
+@media(min-width:450px) and (max-width:800px){
+    .logo{
+        margin-left: 30px;
+    }
+    
+    .menu-opener{
+        width: 45px;
+        margin-right: 30px;
+        display: block;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 70vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+    }
+
+    .menu li a{
+        font-weight: bold;
+        height: 80px;
+        font-size: 27px;
+        margin-left: 50px;
+        border: 0;
+    }
+
+    .menu li.active a{
+        border: 0;
+        color: #b28756;
+    }
+
+    .section-aboutus{
+        flex-direction: column;
+    }
+    .section-aboutus--left{
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section-aboutus--right{
+        width: auto;
+    }
+
+    .section-services{
+        flex-wrap: wrap;
+    }
+    /*Essa é a áera de services, e foi colocado um min-width de 50% para que os elementos possam ficar na linha abaixo. Ou seja, mesmo com o flex-wrap ativo, se eles não tiverem uma largura fixa, eles vão se adaptar para caber tudo em uma mesma linha, então, colocamos que ele tenha no mínimos
+    50% da tela, fazendo com que duas imagens já ocupe 100% da tela e as outras duas vá para a linha de baixo*/
+    .section-service{
+        min-width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .section-service:first-child{
+        border-left: 0;
+    }
+
+    .section-team{
+        max-width: 580px;
+    }
+
+    .section-area--prices{
+        flex-wrap: wrap;
+    }
+
+    .section-area--table{
+        min-width: 50%;
+        margin-top: 50px;
+    }
+
+    .section-premium--left img {
+        width: 280px;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    .section-premium--description {
+        max-width: 400px;
+    }
+
+    .section-some{
+        border-left: none;
+        border-right:none;
+        padding-left: 5px;
+    }
+
+    .section-some:first-child{
+        margin-left: 10px;
+        border-left: none;
+    }
+
+    .section-map{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .section-map--area{
+        width: auto;
+    }
+
+    .section-map--info{
+        width: auto;
+    }
+
+    .section-map--info-item{
+        margin-bottom: 20px;
+    }
+
+    .section-map--info-item:last-child{
+        margin-bottom:0;
+    }
+
+    .section-rodape--area-left{
+        margin-right: 10px;
+    }
+
+    .section-rodape--socials{
+        flex-direction: column;
+        width: 120px;
+    }
+
+    .section-rodape--socials img{
+        margin-bottom: 20px;
+    }
+
+    .section-rodape--area-form{
+        margin-right: 10px;
+    }
+}
+
+
+@media(max-width:450px){
+    *{
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: hidden;
+    }
+    .logo{
+        margin-left: 30px;
+    }
+    
+    .menu-opener{
+        width: 45px;
+        margin-right: 30px;
+        display: block;
+    }
+
+    nav{
+        display: none;
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 80vw;
+        height: calc(100vh - 100px);
+        top: 100px;
+        right: 0;
+    }
+
+    .menu ul{
+        flex-direction: column;
+    }
+
+    .menu li a{
+        font-weight: bold;
+        height: 60px;
+        font-size: 20px;
+        margin-left: 30px;
+        border: 0;
+    }
+
+    .menu li.active a{
+        border: 0;
+        color: #b28756;
+    }
+
+    .banner h1{
+        font-size: 30px;
+    }
+
+    .banner h2{
+        font-size: 17px;
+    }
+
+    .section-aboutus{
+        flex-direction: column;
+    }
+    .section-aboutus--left{
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section-aboutus--right{
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .section-aboutus--right img{
+        width: 100%;
+    }
+
+    .section-services{
+        flex-wrap: wrap;
+    }
+    /*Essa é a áera de services, e foi colocado um min-width de 50% para que os elementos possam ficar na linha abaixo. Ou seja, mesmo com o flex-wrap ativo, se eles não tiverem uma largura fixa, eles vão se adaptar para caber tudo em uma mesma linha, então, colocamos que ele tenha no mínimos
+    50% da tela, fazendo com que duas imagens já ocupe 100% da tela e as outras duas vá para a linha de baixo*/
+    .section-service{
+        min-width: 100%;
+        margin-bottom: 30px;
+        border-right: none;
+    }
+
+    .section-service:first-child{
+        border-left: 0;
+    }
+
+
+
+    .section-projects--filters{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    .section-projects--photo{
+        width: 320px;
+    }
+    .section-projects--photoarea{
+        width: 300px;
+        height: 190px;
+    }
+
+    .section-team{
+        max-width: 280px;
+    }
+
+    .section-area--text{
+        max-width: 100vw;
+        width: 90vw;
+    }
+
+    .section-area--sponsors{
+        flex-wrap: wrap;
+    }
+
+    .section-area--sponsor{
+        width: 100px;
+        margin-right: 40px;
+        margin-top: 30px;
+    }
+
+
+    .section-area--prices{
+        flex-direction: column;
+    }
+
+    .section-area--table{
+        min-width: 50%;
+        margin-top: 50px;
+    }
+
+    .section-premium{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*.section-premium--left img {
+        width: 280px;
+        height: auto;
+        margin-left: 30px;
+    }
+    */
+
+    .section-premium--description {
+        max-width: 100vw;
+        width: 90vw;
+        margin-right: 5px;
+        word-wrap: break-word;
+    }
+
+    .section-somes{
+        flex-direction: column;
+    }
+    .section-some{
+        border-left: none;
+        border-right:none;
+    }
+
+    .section-some:first-child{
+        margin-left: 10px;
+        border-left: none;
+    }
+
+    .section-socials{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-socials--left{
+        margin-bottom: 10px;
+    }
+
+    .section-social-network{
+        margin-left: 15px;
+    }
+
+    .section-sharing{
+        display: none;
+    }
+
+    .section-contact{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-line-up{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-area-name input{
+        margin: 0;
+        width: 300px;
+    }
+
+    .section-area-email input{
+        width: 300px;
+        margin-top: 30px;
+    }
+
+    .section-area-subject input{
+        width: 300px;
+        margin-top: 30px;
+    }
+
+    .section-area-message input{
+        width: 300px;
+        margin-top: 30px;
+    }
+
+    .section-map{
+        padding:0;
+        padding-bottom: 250px;
+    }
+
+    .section-map--area{
+        width: auto;
+    }
+
+    .section-map--info{
+        width: auto;
+    }
+
+    .section-map--info-item{
+        margin-bottom: 20px;
+    }
+
+    .section-map--info-item:last-child{
+        margin-bottom:0;
+    }
+
+    .section-rodape{
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .section-rodape--socials{
+        width: 100%;
+    }
+
+    .section-rodape--socials img{
+        margin-bottom: 20px;
+    }
+
+    .section-rodape--info{
+        display: none;
+    }
+
+    .section-rodape--area-form{
+        display: none;
+    }
+}
+
