@@ -1,0 +1,1 @@
+Projeto desenvolvido em atividade na plataforma B7Web. Projeto 100% responsivo, com design projetado para Desktops, tablets e celulares. Utilizando apenas HTML e CSS.
